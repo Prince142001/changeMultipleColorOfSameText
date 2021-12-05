@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Multiple Color Of Same Text</title>
+
+    <style>
+        h1 {
+            color: black;
+            font-size: 80px;
+            text-align: center;
+        }
+
+        button{
+            margin-left: 35%;
+            margin-top: 8%;
+            padding: 5px 8px;
+            background-color: inherit;
+            font-size: 80px;
+            box-shadow: 0px 0px 15px green;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="changeTextColor">Change Multiple Color Of Same Text</h1>
+
+    <button id="changeColor">clickMe!!!!!</button>
+
+
+    <script>
+        const multipleColors = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];            // the color choices
+        var multipleColorsIndex = 0;                                                                        // the index of the current color
+
+
+        //Create one function using the button id   "here the id name is : changeColor"
+        document.getElementById("changeColor").onclick = function () {
+            document.getElementById("changeTextColor").style.color = multipleColors[multipleColorsIndex];   // set the color of text to the current color
+            document.getElementById("changeTextColor").style.transition = '0.3s';                           // set some transition, so it looks better
+            multipleColorsIndex = (multipleColorsIndex + 1) % multipleColors.length;                        // increase the index to the next color (if it goes beyond the length of the coices array get it back to 0 index using the modulo % operator)
+        };
+    </script>
+</body>
+
+</html>7
+-+
